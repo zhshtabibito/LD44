@@ -39,6 +39,15 @@ public class LevelManager : MonoBehaviour
     {
         levelIndex = SceneManager.GetActiveScene().buildIndex;
         SaveSystem.SaveLevel(this);
+        // TODO: UI - restart, menu, next
         SceneManager.LoadScene(levelIndex + 1);
     }
+    public void LevelFail()
+    {
+        // TODO: UI - restart, menu
+        
+    }
+
+
+
 }
