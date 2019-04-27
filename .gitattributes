@@ -1,0 +1,31 @@
+<<<<<<< HEAD
+## Unity ##
+
+*.cs diff=csharp text
+*.cginc text
+*.shader text
+
+*.mat merge=unityyamlmerge eol=lf
+*.anim merge=unityyamlmerge eol=lf
+*.unity merge=unityyamlmerge eol=lf
+*.prefab merge=unityyamlmerge eol=lf
+*.physicsMaterial2D merge=unityyamlmerge eol=lf
+*.physicsMaterial merge=unityyamlmerge eol=lf
+*.asset merge=unityyamlmerge eol=lf
+*.meta merge=unityyamlmerge eol=lf
+*.controller merge=unityyamlmerge eol=lf
+=======
+## Unity ## 
+ *.cs diff=csharp text 
+ *.cginc text 
+ *.shader text 
+ *.mat merge=unityyamlmerge eol=lf 
+ *.anim merge=unityyamlmerge eol=lf 
+ *.unity merge=unityyamlmerge eol=lf 
+ *.prefab merge=unityyamlmerge eol=lf 
+ *.physicsMaterial2D merge=unityyamlmerge eol=lf 
+ *.physicsMaterial merge=unityyamlmerge eol=lf 
+ *.asset merge=unityyamlmerge eol=lf 
+ *.meta merge=unityyamlmerge eol=lf 
+ *.controller merge=unityyamlmerge eol=lf 
+>>>>>>> 7f7d1f5bc5ef60d21b6a704642f4af80741a3489
