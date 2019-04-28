@@ -19,17 +19,20 @@ public class ClearUIScript : MonoBehaviour
     public void NextLevel()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale = 1;
         SceneManager.LoadScene(currentLevel + 1);
     }
 
     public void BackToMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
 
     public void Retry()
     {
         int currentLevel = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale = 1;
         SceneManager.LoadScene(currentLevel);
     }
 }

@@ -22,6 +22,7 @@ public class CanvasManager : MonoBehaviour
     public void SetClearUI()
     {
         clearUI.SetActive(true);
+        Time.timeScale = (0);
     }
 
     public void SetFailUI()
