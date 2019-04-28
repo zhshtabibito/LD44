@@ -5,6 +5,12 @@ using UnityEngine;
 public class LevelCar1 : LevelSM
 {
     private LevelManager lm;
+    private AudioSource m_Audio;
+    public AudioClip AudioBird;
+    public AudioClip AudioEgg;
+    public AudioClip AudioCar;
+    public AudioClip AudioAcci;
+    public AudioClip AudioStop;
 
     public GameObject car;
     public GameObject grandma;
@@ -24,6 +30,7 @@ public class LevelCar1 : LevelSM
     {
         canClear = false;
         lm = FindObjectOfType<LevelManager>();
+        m_Audio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
