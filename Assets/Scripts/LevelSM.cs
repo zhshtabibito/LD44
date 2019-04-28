@@ -24,6 +24,12 @@ public class LevelSM : MonoBehaviour
         
     }
 
+
+    public void ObjectClicked(int id)
+    {
+
+    }
+
     public int CheckProgress()
     {
 

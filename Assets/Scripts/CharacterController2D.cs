@@ -15,6 +15,7 @@ public class CharacterController2D : MonoBehaviour
 
     private LevelSM sm;
 
+    public int id;
     public bool isMovable;
     public bool isClicked;
 
@@ -30,9 +31,11 @@ public class CharacterController2D : MonoBehaviour
     void OnMouseDown()
     {
         if (isClicked == false)
+        {
             isClicked = true;
+            sm.ObjectClicked(id, gameObject);
+        }   
     }
-
 
     private void Update()
     {
@@ -50,18 +53,6 @@ public class CharacterController2D : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         m_Rigidbody2D.velocity = Vector2.zero;
     }
-
-    /*
-    private int CheckProgress()
-    {
-        // 继承时重载
-        // 检查当前进度
-        // 检查碰撞
-
-        // 改变进度变量
-        return 0;
-    }
-    */
 
 }
 
