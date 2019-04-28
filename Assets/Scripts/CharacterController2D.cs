@@ -66,6 +66,11 @@ public class CharacterController2D : MonoBehaviour
         }
 　　}
 
+    public void MoveSpd(Vector2 spd)
+    {
+        m_Rigidbody2D.velocity = spd;
+    }
+
     public void MoveTo(Vector2 target)
     {
         m_Rigidbody2D.velocity = (target - m_Rigidbody2D.position) / 0.5f;
@@ -75,6 +80,18 @@ public class CharacterController2D : MonoBehaviour
     IEnumerator MoveAndStop()
     {
         yield return new WaitForSeconds(0.5f);
+        m_Rigidbody2D.velocity = Vector2.zero;
+    }
+
+    public void MoveToSlow(Vector2 target)
+    {
+        m_Rigidbody2D.velocity = (target - m_Rigidbody2D.position) / 2f;
+        StartCoroutine("MoveAndStopSlow");
+    }
+
+    IEnumerator MoveAndStopSlow()
+    {
+        yield return new WaitForSeconds(2);
         m_Rigidbody2D.velocity = Vector2.zero;
     }
 
