@@ -15,7 +15,7 @@ public class LevelSM : MonoBehaviour
 
     void Start()
     {
-        
+        state = 0;
     }
 
     // Update is called once per frame
