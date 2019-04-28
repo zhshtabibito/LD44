@@ -7,6 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance{get; private set;}
     private int levelIndex;
+    private CanvasManager canvasManager;
     // Start is called before the first frame update
     void Awake()
     {
@@ -19,6 +20,8 @@ public class LevelManager : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
+        
+        
     }
     void Start()
     {
@@ -42,12 +45,15 @@ public class LevelManager : MonoBehaviour
         Debug.Log("level cleared:" + levelIndex);
         SaveSystem.SaveLevel(levelIndex);
         // TODO: UI - restart, menu, next
-        SceneManager.LoadScene(levelIndex + 1);
+        canvasManager = FindObjectsOfType<CanvasManager>()[0];
+        canvasManager.SetClearUI();
+        //SceneManager.LoadScene(levelIndex + 1);
     }
     public void LevelFail()
     {
         // TODO: UI - restart, menu
-        SceneManager.LoadScene(0);
+        canvasManager = FindObjectsOfType<CanvasManager>()[0];
+        canvasManager.SetFailUI();
     }
 
 
