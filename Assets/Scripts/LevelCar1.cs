@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class LevelCar1 : LevelSM
 {
+    private LevelManager lm;
+
     public GameObject car;
     public GameObject grandma;
     public GameObject father;
+    public GameObject driver1;
+    public GameObject driver2;
+    public GameObject driver3;
     public GameObject bird;
     public GameObject egg;
     public GameObject lightRG;
@@ -18,6 +23,7 @@ public class LevelCar1 : LevelSM
     void Start()
     {
         canClear = false;
+        lm = FindObjectOfType<LevelManager>();
     }
 
     // Update is called once per frame
@@ -38,39 +44,34 @@ public class LevelCar1 : LevelSM
             bird.GetComponent<CharacterController2D>().MoveTo(tar);
             egg.transform.position = tar;
             StartCoroutine("WaitAndEgg");
-
-
-
         }
-
-
-
-
-
-
     }
 
     IEnumerator WaitAndEgg()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.5f);
         egg.GetComponent<SpriteRenderer>().enabled = true;
-        egg.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -3f));
+        bird.GetComponent<CharacterController2D>().MoveSpd(new Vector2(-1, 4));
+        egg.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -3));
         StartCoroutine("WaitAndBoom");
 
     }
 
     IEnumerator WaitAndBoom()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
         egg.SetActive(false);
         grandma.GetComponent<SpriteRenderer>().sprite = GameObject.Find("grandma2").GetComponent<SpriteRenderer>().sprite;
         canClear = true;
         grandma.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
+        driver1.SetActive(false);
+        driver2.SetActive(true);
+
     }
 
     IEnumerator WaitAndGreen()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1);
         lightRG.GetComponent<SpriteRenderer>().sprite = GameObject.Find("LightG").GetComponent<SpriteRenderer>().sprite;
         StartCoroutine("WaitAndMove");
     }
@@ -78,9 +79,12 @@ public class LevelCar1 : LevelSM
     IEnumerator WaitAndMove()
     {
         yield return new WaitForSeconds(2);
-        grandma.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -0.5f));
-        father.GetComponent<CharacterController2D>().MoveSpd(new Vector2(-2, 0));
-        car.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -2));
+        if (!canClear)
+        {
+            grandma.GetComponent<CharacterController2D>().MoveSpd(new Vector2(-0.5f, -0.5f));
+        }
+        father.GetComponent<CharacterController2D>().MoveSpd(new Vector2(-4, 0));
+        car.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -1));
         father.GetComponent<Animator>().SetTrigger("Idle2Run");
         StartCoroutine("WaitAndStop");
     }
@@ -89,29 +93,33 @@ public class LevelCar1 : LevelSM
     {
         Debug.Log("WaitAndStop");
         Debug.Log(canClear);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
         if (canClear)
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.2f);
             father.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
             car.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
             Debug.Log("Die");
             father.GetComponent<Animator>().SetTrigger("Run2Die");
-            // TODO: clear and UI
+            // clear and UI
+            lm.LevelClear();
         }
         else
         {
             car.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
+            driver1.SetActive(false);
+            driver3.SetActive(true);
             StartCoroutine("WaitAndFail");
         }
     }
 
     IEnumerator WaitAndFail()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.5f);
         father.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
         father.GetComponent<Animator>().SetTrigger("Run2Idle");
-        // TODO: fail and UI
+        // fail and UI
+        lm.LevelFail();
     }
 
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CapsuleCollider2D))]
+
 public class CharacterController2D : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody2D;
