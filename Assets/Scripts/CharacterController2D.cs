@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-[RequireComponent(typeof(CapsuleCollider2D))]
+
 public class CharacterController2D : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody2D;
@@ -33,7 +33,7 @@ public class CharacterController2D : MonoBehaviour
         if (isClicked == false)
         {
             isClicked = true;
-            //sm.ObjectClicked(id, gameObject);
+            sm.ObjectClicked(id, gameObject);
         }   
     }
 

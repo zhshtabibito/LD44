@@ -25,7 +25,7 @@ public class LevelSM : MonoBehaviour
     }
 
 
-    public void ObjectClicked(int id)
+    public void ObjectClicked(int id, GameObject obj)
     {
 
     }
