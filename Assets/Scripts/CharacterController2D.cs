@@ -5,13 +5,12 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(Rigidbody2D))]
-
+[RequireComponent(typeof(CapsuleCollider2D))]
 public class CharacterController2D : MonoBehaviour
 {
     Rigidbody2D m_Rigidbody2D;
 
-    private bool isMouseDown;
-    private Vector2 LastPos;
+    private Vector2 LastMousePos;
 
     private LevelSM sm;
 
@@ -23,24 +22,49 @@ public class CharacterController2D : MonoBehaviour
      
     private void Awake()
     {
+        //TODO
+        this.gameObject.transform.parent = GameObject.Find("World").transform;
         isClicked = false;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         sm = GetComponentInParent<LevelSM>();
     }
 
-    void OnMouseDown()
-    {
-        if (isClicked == false)
-        {
-            isClicked = true;
-            sm.ObjectClicked(id, gameObject);
-        }   
-    }
-
     private void Update()
     {
-        
+
     }
+
+    IEnumerator OnMouseDown()
+    {
+        Transform trans = this.gameObject.transform;
+        Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z);
+        Vector3 offset = trans.position - Camera.main.ScreenToWorldPoint(mousePos);
+        Vector3 StartPos = new Vector3(trans.position.x, trans.position.y, trans.position.z);
+        Vector3 LastPos = StartPos;
+        if(isMovable)
+　　        while(Input.GetMouseButton(0))
+            {
+　　　　        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z);
+                Vector3 targetPos = offset + Camera.main.ScreenToWorldPoint(mousePos);
+　　　　        trans.position = targetPos;
+                LastPos = targetPos;
+　　　　        yield return new WaitForFixedUpdate();
+            }
+        Debug.Log(LastPos);
+        float distance = (LastPos - StartPos).sqrMagnitude;
+        //比较愚蠢地兼容点击和拖拽
+        if(distance < 0.05 && !isClicked)
+        {
+            isClicked = true;
+            sm.ObjectClicked(id, this.gameObject);
+            //TODO: Click Event
+        }
+        else
+        {
+            isClicked = false;
+            //TODO: Event Related to Transform Position
+        }
+　　}
 
     public void MoveSpd(Vector2 spd)
     {
