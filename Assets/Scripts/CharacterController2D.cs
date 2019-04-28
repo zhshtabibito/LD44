@@ -33,7 +33,7 @@ public class CharacterController2D : MonoBehaviour
         if (isClicked == false)
         {
             isClicked = true;
-            sm.ObjectClicked(id, gameObject);
+            //sm.ObjectClicked(id, gameObject);
         }   
     }
 

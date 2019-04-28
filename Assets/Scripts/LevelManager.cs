@@ -33,19 +33,21 @@ public class LevelManager : MonoBehaviour
     public int getLevelIndex()
 	{
 		//用于向leveldata类传递关卡信息
+        levelIndex = SceneManager.GetActiveScene().buildIndex;
 		return levelIndex;
 	}
     public void LevelClear()
     {
         levelIndex = SceneManager.GetActiveScene().buildIndex;
-        SaveSystem.SaveLevel(this);
+        Debug.Log("level cleared:" + levelIndex);
+        SaveSystem.SaveLevel(levelIndex);
         // TODO: UI - restart, menu, next
         SceneManager.LoadScene(levelIndex + 1);
     }
     public void LevelFail()
     {
         // TODO: UI - restart, menu
-        
+        SceneManager.LoadScene(0);
     }
 
 
