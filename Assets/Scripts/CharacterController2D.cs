@@ -39,12 +39,30 @@ public class CharacterController2D : MonoBehaviour
         Transform trans = this.gameObject.transform;
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z);
         Vector3 offset = trans.position - Camera.main.ScreenToWorldPoint(mousePos);
-　　    while(Input.GetMouseButton(0))
+        Vector3 StartPos = new Vector3(trans.position.x, trans.position.y, trans.position.z);
+        Vector3 LastPos = StartPos;
+        if(isMovable)
+　　        while(Input.GetMouseButton(0))
+            {
+　　　　        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z);
+                Vector3 targetPos = offset + Camera.main.ScreenToWorldPoint(mousePos);
+　　　　        trans.position = targetPos;
+                LastPos = targetPos;
+　　　　        yield return new WaitForFixedUpdate();
+            }
+        Debug.Log(LastPos);
+        float distance = (LastPos - StartPos).sqrMagnitude;
+        //比较愚蠢地兼容点击和拖拽
+        if(distance < 0.05 && !isClicked)
         {
-　　　　    mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z);
-            Vector3 targetPos = offset+Camera.main.ScreenToWorldPoint(mousePos);
-　　　　    trans.position = targetPos;
-　　　　    yield return new WaitForFixedUpdate();
+            isClicked = true;
+            sm.ObjectClicked(id, this.gameObject);
+            //TODO: Click Event
+        }
+        else
+        {
+            isClicked = false;
+            //TODO: Event Related to Transform Position
         }
 　　}
 
