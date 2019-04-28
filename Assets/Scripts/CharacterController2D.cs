@@ -16,9 +16,11 @@ public class CharacterController2D : MonoBehaviour
     private bool isArrival;
 
     public int id;
+    public int idReserved;
     public bool isMovable;
     private bool isClicked;
     public GameObject Target = null;
+    public GameObject TargetReserved = null;
 
     public Rigidbody2D Rigidbody2D { get { return m_Rigidbody2D; } }
      
@@ -78,6 +80,13 @@ public class CharacterController2D : MonoBehaviour
             this.transform.position = other.transform.position;
             isArrival = true;
         }
+        else if (other.transform.gameObject == TargetReserved)
+        {
+            this.transform.position = other.transform.position;
+            isArrival = true;
+            id = idReserved;
+        }
+
     }
 
     public void MoveSpd(Vector2 spd)

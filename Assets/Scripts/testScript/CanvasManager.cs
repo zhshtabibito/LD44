@@ -32,4 +32,9 @@ public class CanvasManager : MonoBehaviour
     {
         pauseUI.SetActive(true);
     }
+    public void CloseFailUI()
+    {
+        failUI.SetActive(false);
+    }
+
 }
