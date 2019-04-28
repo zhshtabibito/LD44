@@ -13,10 +13,12 @@ public class CharacterController2D : MonoBehaviour
     private Vector2 LastMousePos;
 
     private LevelSM sm;
+    private bool isArrival;
 
     public int id;
     public bool isMovable;
-    public bool isClicked;
+    private bool isClicked;
+    public GameObject Target = null;
 
     public Rigidbody2D Rigidbody2D { get { return m_Rigidbody2D; } }
      
@@ -25,6 +27,7 @@ public class CharacterController2D : MonoBehaviour
         //TODO
         this.gameObject.transform.parent = GameObject.Find("World").transform;
         isClicked = false;
+        isArrival = false;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         sm = GetComponentInParent<LevelSM>();
     }
@@ -44,6 +47,12 @@ public class CharacterController2D : MonoBehaviour
         if(isMovable)
 　　        while(Input.GetMouseButton(0))
             {
+                if(isArrival)
+                {
+                    isMovable = false;
+                    sm.ObjectClicked(id, this.gameObject);
+                    break;
+                }
 　　　　        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z);
                 Vector3 targetPos = offset + Camera.main.ScreenToWorldPoint(mousePos);
 　　　　        trans.position = targetPos;
@@ -52,19 +61,24 @@ public class CharacterController2D : MonoBehaviour
             }
         Debug.Log(LastPos);
         float distance = (LastPos - StartPos).sqrMagnitude;
-        //比较愚蠢地兼容点击和拖拽
+
         if(distance < 0.05 && !isClicked)
         {
             isClicked = true;
             sm.ObjectClicked(id, this.gameObject);
-            //TODO: Click Event
         }
-        else
-        {
-            isClicked = false;
-            //TODO: Event Related to Transform Position
-        }
+        if (!isArrival)
+            this.gameObject.transform.position = StartPos;
 　　}
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.transform.gameObject == Target)
+        {
+            this.transform.position = other.transform.position;
+            isArrival = true;
+        }
+    }
 
     public void MoveSpd(Vector2 spd)
     {
