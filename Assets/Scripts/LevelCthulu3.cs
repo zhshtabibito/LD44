@@ -154,10 +154,6 @@ public class LevelCthulu3 : LevelCthuluTemplate
                     {
                         obj.SetActive(false);
                     }
-                    foreach (GameObject obj in LettersFixed)
-                    {
-                        obj.SetActive(false);
-                    }
                     foreach (GameObject obj in LettersDark)
                     {
                         obj.SetActive(false);
