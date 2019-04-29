@@ -69,15 +69,16 @@ public class LevelCar2 : LevelSM
         father.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
         father.GetComponent<Animator>().SetTrigger("Run2Idle");
         // fail and UI
+        yield return new WaitForSeconds(1);
         lm.LevelFail();
-
+        StartCoroutine("WaitAndClear");
 
     }
 
     IEnumerator WaitAndClear()
     {
         // TODO: 汽车鸣笛音效
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(5);
         car2.SetActive(true);
         car2.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -2));
         // TODO: 撞车音效
