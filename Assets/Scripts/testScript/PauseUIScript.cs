@@ -18,5 +18,6 @@ public class PauseUIScript : MonoBehaviour
     public void Cancel()
     {
         gameObject.SetActive(false);
+        Time.timeScale = 1;
     }
 }

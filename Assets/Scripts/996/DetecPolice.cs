@@ -6,6 +6,7 @@ public class DetecPolice : MonoBehaviour
 {
     // Start is called before the first frame update
     public Father996 father;
+    public Police996 police;
     private LevelManager lm;
     void Start()
     {
@@ -21,9 +22,15 @@ public class DetecPolice : MonoBehaviour
     {
         if(other.name == "Police" && (father.GetWorkingState() == true))
         {
-            lm = FindObjectOfType<LevelManager>();
-            lm.LevelFail();
-            Time.timeScale = 0;
+            StartCoroutine(WaitToFail());
         }
+    }
+    public IEnumerator WaitToFail()
+    {
+        lm = FindObjectOfType<LevelManager>();
+        police.gameObject.GetComponent<Animator>().SetTrigger("Notice_Father");
+        yield return new WaitForSeconds(0.1f);
+        lm.LevelFail();
+        Time.timeScale = 0;
     }
 }

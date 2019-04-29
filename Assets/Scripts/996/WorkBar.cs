@@ -35,9 +35,15 @@ public class WorkBar : MonoBehaviour
         }
         if(contentImage.fillAmount == 1 && cleared == false)
         {
-            lm = FindObjectOfType<LevelManager>();
-            lm.LevelClear();
+            StartCoroutine(FatherDead());
             cleared = true;
         }
+    }
+    public IEnumerator FatherDead()
+    {
+        father.Dead();
+        yield return new WaitForSeconds(3.0f);
+        lm = FindObjectOfType<LevelManager>();
+        lm.LevelClear();
     }
 }

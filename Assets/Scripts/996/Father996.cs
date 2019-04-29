@@ -6,13 +6,18 @@ public class Father996 : MonoBehaviour
 {
     public Sprite workingSprite;
     public Sprite sleepingSprite;
+    public Sprite deadSprite;
     public SpriteRenderer fatherRenderer;
     private bool isWorking;
-    public SpriteRenderer snoozeRender;
+    private bool isDead;
+    public Snooze996 snooze;
+    public SpriteRenderer soul;
+    public GameObject detector;
     // Start is called before the first frame update
     void Start()
     {
         isWorking = true;
+        isDead = false;
     }
 
     // Update is called once per frame
@@ -30,12 +35,15 @@ public class Father996 : MonoBehaviour
         {
             fatherRenderer.sprite = sleepingSprite;
         }
+        if(isDead == true)
+        {
+            fatherRenderer.sprite = deadSprite;
+        }
     }
     void OnMouseDown()
     {
         isWorking = false;
-        snoozeRender.enabled = true;
-        snoozeRender.gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
+        snooze.EnableSnooze();
     }
     public bool GetWorkingState()
     {
@@ -44,5 +52,11 @@ public class Father996 : MonoBehaviour
     public void SetWorkingState(bool workingState)
     {
         isWorking = workingState;
+    }
+    public void Dead()
+    {
+        isDead = true;
+        soul.enabled = true;
+        detector.GetComponent<BoxCollider2D>().enabled = false;
     }
 }

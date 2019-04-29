@@ -7,6 +7,7 @@ public class Police996 : MonoBehaviour
     // Start is called before the first frame update
     public float movingSpeed;
     public float movingTime;
+    //public Father996 father;
     private bool towardsRight;
     private bool directionChanged;
     private float scale_x;
@@ -47,4 +48,14 @@ public class Police996 : MonoBehaviour
         towardsRight = !towardsRight;
         directionChanged = false;
     }
+
+/* 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.name == "DetactiveArea" && father.GetWorkingState() == true)
+        {
+            GetComponent<Animator>().SetTrigger("Notice_Father");
+        }
+    }
+*/
 }
