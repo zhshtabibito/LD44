@@ -13,6 +13,9 @@ public class Snooze996_2 : MonoBehaviour
     public GameObject father;
     public float biggerTime;
     private IEnumerator cR;
+    public SpriteRenderer whiteImage;
+    private float whiteAlpha;
+    private float tempVelocity;
     //private SpriteRenderer sR;
     //泡泡破碎后停留多久
     void Start()
@@ -70,12 +73,38 @@ public class Snooze996_2 : MonoBehaviour
         snoozeAnimator.SetTrigger("Snooze_Broken2");
         m_audio.clip = AudioBroken;
         m_audio.Play();
+        
+        //调整爆炸时间
+        StartCoroutine(changeWhite());
         yield return new WaitForSeconds(1.0f);
+        StartCoroutine(changeBack());
+        yield return new WaitForSeconds(1.0f);
+
 
         GetComponent<SpriteRenderer>().enabled = false;
         father.GetComponent<Father996_2>().Dead();
         yield return new WaitForSeconds(3.0f);
 
         FindObjectOfType<LevelManager>().LevelClear();
+    }
+    public IEnumerator changeWhite()
+    {
+        Debug.Log("changing White");
+        while(whiteAlpha <= 1.0f)
+        {
+            whiteAlpha += 0.2f;
+            whiteImage.color = new Color(1.0f, 1.0f, 1.0f, whiteAlpha);
+            yield return new WaitForFixedUpdate();
+        }
+    }
+    public IEnumerator changeBack()
+    {
+        Debug.Log("changing White");
+        while(whiteAlpha >= 0f)
+        {
+            whiteAlpha -= 0.1f;
+            whiteImage.color = new Color(1.0f, 1.0f, 1.0f, whiteAlpha);
+            yield return new WaitForFixedUpdate();
+        }
     }
 }
