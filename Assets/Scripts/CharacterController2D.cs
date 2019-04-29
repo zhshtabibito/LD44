@@ -18,14 +18,20 @@ public class CharacterController2D : MonoBehaviour
     public int id;
     public int idReserved;
     public bool isMovable;
+    public bool willBack;
+    public bool willStick;
     private bool isClicked;
     public GameObject Target = null;
     public GameObject TargetReserved = null;
 
+    Vector3 StartPos;
+
     public Rigidbody2D Rigidbody2D { get { return m_Rigidbody2D; } }
-     
+
     private void Awake()
     {
+        StartPos = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
         //TODO
         this.gameObject.transform.parent = GameObject.Find("World").transform;
         isClicked = false;
@@ -43,18 +49,11 @@ public class CharacterController2D : MonoBehaviour
     {
         Transform trans = this.gameObject.transform;
         Vector3 mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z);
-        Vector3 offset = trans.position - Camera.main.ScreenToWorldPoint(mousePos);
-        Vector3 StartPos = new Vector3(trans.position.x, trans.position.y, trans.position.z);
+        Vector3 offset = trans.position - Camera.main.ScreenToWorldPoint(mousePos); 
         Vector3 LastPos = StartPos;
         if(isMovable)
 　　        while(Input.GetMouseButton(0))
             {
-                if(isArrival)
-                {
-                    isMovable = false;
-                    sm.ObjectClicked(id, this.gameObject);
-                    break;
-                }
 　　　　        mousePos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, trans.position.z);
                 Vector3 targetPos = offset + Camera.main.ScreenToWorldPoint(mousePos);
 　　　　        trans.position = targetPos;
@@ -64,26 +63,42 @@ public class CharacterController2D : MonoBehaviour
         Debug.Log(LastPos);
         float distance = (LastPos - StartPos).sqrMagnitude;
 
-        if(distance < 0.05 && !isClicked)
+        if(distance < 0.05 && !isClicked && Target == null)
         {
             isClicked = true;
             sm.ObjectClicked(id, this.gameObject);
         }
+　　}
+
+    IEnumerator OnMouseUp()
+    {
         if (!isArrival)
             this.gameObject.transform.position = StartPos;
-　　}
+        else
+        {
+            isMovable = false;
+            sm.ObjectClicked(id, this.gameObject);
+            transform.position = willBack ? StartPos : Target.transform.position;
+        }
+        yield return new WaitForFixedUpdate();
+    }
+
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.transform.gameObject == Target)
         {
-            this.transform.position = other.transform.position;
+            if (willStick)
+            {
+                isMovable = false;
+                sm.ObjectClicked(id, this.gameObject);
+            }
             isArrival = true;
         }
         else if (other.transform.gameObject == TargetReserved)
         {
-            this.transform.position = other.transform.position;
             isArrival = true;
+            Target = TargetReserved;
             id = idReserved;
         }
 
