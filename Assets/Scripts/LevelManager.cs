@@ -20,8 +20,8 @@ public class LevelManager : MonoBehaviour
 		{
 			Destroy(gameObject);
 		}
-        
-        
+        //PlayerPrefs.SetInt("maxLevel", 0);
+
     }
     void Start()
     {

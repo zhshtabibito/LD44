@@ -25,11 +25,13 @@ public class LevelCar1 : LevelSM
 
 
     public bool canClear;
+    private bool hit;
 
     // Start is called before the first frame update
     void Start()
     {
         canClear = false;
+        hit = false;
         lm = FindObjectOfType<LevelManager>();
         m_Audio = GetComponent<AudioSource>();
     }
@@ -78,14 +80,24 @@ public class LevelCar1 : LevelSM
         grandma.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
         driver1.SetActive(false);
         driver2.SetActive(true);
+        hit = true;
 
     }
 
     IEnumerator WaitAndGreen()
     {
-        yield return new WaitForSeconds(1);
-        lightRG.GetComponent<SpriteRenderer>().sprite = GameObject.Find("LightG").GetComponent<SpriteRenderer>().sprite;
-        StartCoroutine("WaitAndMove");
+        if (!hit)
+        {
+            yield return new WaitForSeconds(1);
+            lightRG.GetComponent<SpriteRenderer>().sprite = GameObject.Find("LightG").GetComponent<SpriteRenderer>().sprite;
+            StartCoroutine("WaitAndMove");
+        }
+        else
+        {
+            yield return new WaitForSeconds(2);
+            // fail and UI
+            lm.LevelFail();
+        }
     }
 
     IEnumerator WaitAndMove()

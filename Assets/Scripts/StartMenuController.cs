@@ -8,6 +8,11 @@ public class StartMenuController : MonoBehaviour
     public List<Button> buttons;
     private int levelPassed;
     private int loadleveldata;
+    private void Awake()
+    {
+        Screen.SetResolution(1920, 1080, false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
