@@ -9,6 +9,12 @@ public abstract class LevelCthuluTemplate : LevelSM
     protected const int CLEAR = 0x7fffffff;
     protected const int FAIL = -0x7fffffff;
 
+    protected AudioSource m_Audio;
+    public AudioClip AudioShake;
+    public AudioClip AudioDrop;
+    public AudioClip AudioOpen;
+    public AudioClip AudioHeap;
+
     public GameObject Background;
     public GameObject Magic;
     public GameObject Father;
@@ -35,7 +41,7 @@ public abstract class LevelCthuluTemplate : LevelSM
     protected void Dropto(GameObject obj, float y)
     {
         Vector3 pos = obj.transform.position;
-        obj.GetComponent<CharacterController2D>().MoveTo(new Vector2(pos.x, y));
+        obj.GetComponent<CharacterController2D>().MoveTo(new Vector2(pos.x, y), 0.2f);
     }
 
     protected void SetMovement(GameObject obj, GameObject target, Vector2 startoffset, Vector2 endoffset, float time)

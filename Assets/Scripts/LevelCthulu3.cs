@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelCthulu3 : LevelCthuluTemplate
 {
+    public AudioClip AudioTED;
     public List<GameObject> LettersFixed, Letters, LettersDark;
     public GameObject TED;
     public GameObject Carpet;
@@ -33,6 +34,7 @@ public class LevelCthulu3 : LevelCthuluTemplate
     // Start is called before the first frame update
     void Start()
     {
+        m_Audio = GetComponent<AudioSource>();
         lm = FindObjectOfType<LevelManager>();
         string[] LFArr = { "C1", "T1", "H", "U1", "L", "U2" };
         string[] LArr = { "E1", "X", "C2", "E2", "P", "T2", "E3", "D" };
@@ -100,6 +102,8 @@ public class LevelCthulu3 : LevelCthuluTemplate
                     Dropto(DeadBook, -3.2f);
                     Obj.GetComponent<CharacterController2D>().isClicked = true;
                 }
+                m_Audio.clip = AudioDrop;
+                m_Audio.Play();
             }
         }
         else if (id == 2)
@@ -114,6 +118,8 @@ public class LevelCthulu3 : LevelCthuluTemplate
                 {
                     obj.SetActive(true);
                 }
+                m_Audio.clip = AudioOpen;
+                m_Audio.Play();
                 state = 4;
             }
         }
@@ -157,6 +163,8 @@ public class LevelCthulu3 : LevelCthuluTemplate
                         obj.SetActive(false);
                     }
                     StartCoroutine("WaitForComeDown");
+                    m_Audio.clip = AudioTED;
+                    m_Audio.Play();
                 }
                 else if (state == failflag)
                 {

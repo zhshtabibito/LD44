@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class LevelCthulu2 : LevelCthuluTemplate
 {
+    public AudioClip AudioHeretic;
+    public AudioClip AudioPolice;
+    public AudioClip AudioPhone;
+
     public GameObject PaganFather, PaganFather2;
     public GameObject Phone, Phone2;
     public GameObject RedHeap, BlueHeap;
@@ -11,6 +15,7 @@ public class LevelCthulu2 : LevelCthuluTemplate
     public GameObject GroupBubble, Bubble;
     public GameObject CthuluCalling, FatherCalling;
     public GameObject Police;
+    public GameObject Heretic;
     private LevelManager lm;
 
     // Start is called before the first frame update
@@ -29,6 +34,7 @@ public class LevelCthulu2 : LevelCthuluTemplate
         DarkBackground2.SetActive(false);
         Bubble.transform.parent = GroupBubble.transform;
         CthuluCalling.transform.parent = GroupBubble.transform;
+        m_Audio = GetComponent<AudioSource>();
     }
 
     public override void ObjectClicked(int id, GameObject obj)
@@ -66,11 +72,13 @@ public class LevelCthulu2 : LevelCthuluTemplate
                 {
                     state = 5;
                     RedHeap.SetActive(true);
-                    Dropto(RedHeap, -0.15f);
+                    Dropto(RedHeap, -1.5f);
                     ObjectReplace(Shelf, EmptyShelf);
                     Phone.SetActive(true);
                     obj.GetComponent<CharacterController2D>().isClicked = true;
                 }
+                m_Audio.clip = state < 4 ? AudioDrop : AudioHeap;
+                m_Audio.Play();
             }
         }
         else if (id == 3)
@@ -81,8 +89,10 @@ public class LevelCthulu2 : LevelCthuluTemplate
                 DeadBook.SetActive(false);
                 DarkBackground2.SetActive(true);
                 ObjectReplace(Father, PaganFather);
-                SetMovement(Police, PaganFather, new Vector2(-25.0f, 0.0f), new Vector2(-2.5f, 0.0f), 4.0f);
-                state = 8;
+                SetMovement(Heretic, PaganFather, new Vector2(-20.0f, 0.0f), new Vector2(10.0f, 0.0f), 3.0f);
+                m_Audio.clip = AudioHeretic;
+                m_Audio.Play();
+                StartCoroutine("WaitForRunning");
             }
         }
         else if(id == 4)
@@ -91,10 +101,20 @@ public class LevelCthulu2 : LevelCthuluTemplate
             {
                 ObjectReplace(Phone, Phone2);
                 ObjectReplace(Father, FatherCalling);
-                GroupBubble.SetActive(true);
-                StartCoroutine("WaitForCalling");
+                m_Audio.clip = AudioPhone;
+                m_Audio.Play();
+                StartCoroutine("WaitForReceiving");
             }
         }
+    }
+
+    IEnumerator WaitForRunning()
+    {
+        yield return new WaitForSeconds(3);
+        SetMovement(Police, PaganFather, new Vector2(-25.0f, 0.0f), new Vector2(-2.5f, 0.0f), 3.0f);
+        m_Audio.clip = AudioPolice;
+        m_Audio.Play();
+        state = 8;
     }
 
     IEnumerator WaitForCalling()
@@ -105,6 +125,14 @@ public class LevelCthulu2 : LevelCthuluTemplate
         ObjectReplace(FatherCalling, Father);
         SetMovement(Cthulu, Father, new Vector2(-2.5f, 12.0f), new Vector2(-2.5f, 1.5f), 3.0f);
         StartCoroutine("WaitForClear");
+    }
+
+    IEnumerator WaitForReceiving()
+    {
+        yield return new WaitForSeconds(4);
+        m_Audio.Stop();
+        GroupBubble.SetActive(true);
+        StartCoroutine("WaitForCalling");
     }
 
     IEnumerator WaitForClear()

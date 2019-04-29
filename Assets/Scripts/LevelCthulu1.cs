@@ -19,6 +19,7 @@ public class LevelCthulu1 : LevelCthuluTemplate
         DeadBook.SetActive(false);
         Magic.SetActive(false);
         DarkBackground2.SetActive(false);
+        m_Audio = GetComponent<AudioSource>();
     }
 
 
@@ -53,15 +54,26 @@ public class LevelCthulu1 : LevelCthuluTemplate
                     Dropto(DeadBook, -3.2f);
                     obj.GetComponent<CharacterController2D>().isClicked = true;
                 }
+                m_Audio.clip = AudioDrop;
+                m_Audio.Play();
             }
         }
         else if(id == 3)
         {
             if (state == 5)
             {
-                StartCoroutine("WaitForMove");
+                m_Audio.clip = AudioOpen;
+                m_Audio.Play();
+                StartCoroutine("WaitForOpenBook");
             }
         }
+    }
+
+    IEnumerator WaitForOpenBook()
+    {
+        yield return new WaitForSeconds(2);
+        m_Audio.Stop();
+        StartCoroutine("WaitForMove");
     }
 
     IEnumerator WaitForMove()
