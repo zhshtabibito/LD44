@@ -35,8 +35,9 @@ public class LevelCthulu1 : LevelCthuluTemplate
             if (state < 5)
             {
                 obj.GetComponent<CharacterController2D>().isClicked = false;
-                if (state == 2)
+                if (state == 2 || state == 0)
                 {
+                    Bubble.SetActive(false);
                     state = 3;
                     BlueBook.SetActive(true);
                     Dropto(BlueBook, -3.2f);
