@@ -47,6 +47,9 @@ TagManager:
   - name: Figure
     uniqueID: 2698249935
     locked: 0
+  - name: Table
+    uniqueID: 2463816257
+    locked: 0
   - name: FigureAndFront
     uniqueID: 2798800611
     locked: 0

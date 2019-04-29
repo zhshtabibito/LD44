@@ -13,6 +13,7 @@ public class LevelCafe1 : LevelSM
     public GameObject KCN;
     public GameObject juice2;
     public GameObject KCN2;
+    public GameObject juice3;
     public GameObject ball;
 
     public bool canClear;
@@ -76,6 +77,9 @@ public class LevelCafe1 : LevelSM
         KCN.SetActive(false);
         KCN2.SetActive(true);
         juice.SetActive(false);
+        juice3.transform.position = juice.transform.position;
+        yield return new WaitForSeconds(0.5f);
+        juice3.SetActive(false);
         juice2.SetActive(true);
         ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(-12, 5));
         yield return new WaitForSeconds(2f);

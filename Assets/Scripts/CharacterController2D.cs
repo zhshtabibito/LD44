@@ -17,12 +17,14 @@ public class CharacterController2D : MonoBehaviour
 
     public int id;
     public int idReserved;
+    public int idReserved2;
     public bool isMovable;
     public bool willBack;
     public bool willStick;
     private bool isClicked;
     public GameObject Target = null;
     public GameObject TargetReserved = null;
+    public GameObject TargetReserved2 = null;
 
     Vector3 StartPos;
 
@@ -72,13 +74,16 @@ public class CharacterController2D : MonoBehaviour
 
     IEnumerator OnMouseUp()
     {
-        if (!isArrival)
-            this.gameObject.transform.position = StartPos;
-        else
+        if (isMovable)
         {
-            isMovable = false;
-            sm.ObjectClicked(id, this.gameObject);
-            transform.position = willBack ? StartPos : Target.transform.position;
+            if (!isArrival)
+                this.gameObject.transform.position = StartPos;
+            else
+            {
+                isMovable = false;
+                sm.ObjectClicked(id, this.gameObject);
+                transform.position = willBack ? StartPos : Target.transform.position;
+            }
         }
         yield return new WaitForFixedUpdate();
     }
@@ -100,6 +105,12 @@ public class CharacterController2D : MonoBehaviour
             isArrival = true;
             Target = TargetReserved;
             id = idReserved;
+        }
+        else if (other.transform.gameObject == TargetReserved2)
+        {
+            isArrival = true;
+            Target = TargetReserved2;
+            id = idReserved2;
         }
 
     }
