@@ -21,7 +21,7 @@ public class CharacterController2D : MonoBehaviour
     public bool isMovable;
     public bool willBack;
     public bool willStick;
-    private bool isClicked;
+    public bool isClicked;
     public GameObject Target = null;
     public GameObject TargetReserved = null;
     public GameObject TargetReserved2 = null;
@@ -120,15 +120,15 @@ public class CharacterController2D : MonoBehaviour
         m_Rigidbody2D.velocity = spd;
     }
 
-    public void MoveTo(Vector2 target)
+    public void MoveTo(Vector2 target, float time = 0.5f)
     {
-        m_Rigidbody2D.velocity = (target - m_Rigidbody2D.position) / 0.5f;
-        StartCoroutine("MoveAndStop");
+        m_Rigidbody2D.velocity = (target - m_Rigidbody2D.position) / time;
+        StartCoroutine("MoveAndStop", time);
     }
 
-    IEnumerator MoveAndStop()
+    IEnumerator MoveAndStop(float time)
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(time);
         m_Rigidbody2D.velocity = Vector2.zero;
     }
 
