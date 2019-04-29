@@ -87,6 +87,7 @@ public class LevelCar3 : LevelSM
         car.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
         Debug.Log("Die");
         father.GetComponent<Animator>().SetTrigger("Run2Die");
+        yield return new WaitForSeconds(2);
         // clear and UI
         lm.LevelClear();
     }

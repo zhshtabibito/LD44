@@ -90,12 +90,12 @@ public class LevelCar2 : LevelSM
     IEnumerator WaitAndClear()
     {
         // TODO: 汽车鸣笛音效
-        
 
-        yield return new WaitForSeconds(3);
+
+        yield return new WaitForSeconds(1);
         m_audio.clip = AudioCar2;
         m_audio.Play();
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(8);
         car2.SetActive(true);
         car2.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -2));
         
@@ -105,6 +105,7 @@ public class LevelCar2 : LevelSM
         car1.GetComponent<CharacterController2D>().MoveSpd(new Vector2(-6, -8));
         car2.GetComponent<CharacterController2D>().MoveSpd(new Vector2(8, -6));
         father.GetComponent<Animator>().SetTrigger("Idle2Die");
+        father.GetComponent<CharacterController2D>().MoveTo(new Vector2(father.transform.position.x, father.transform.position.y - 1.5f));
         yield return new WaitForSeconds(1);
         var canvasManager = FindObjectsOfType<CanvasManager>()[0];
         canvasManager.CloseFailUI();

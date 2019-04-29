@@ -188,8 +188,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -973939603
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2b254910f7b431846ac0aa7bf1870831, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -217,6 +217,8 @@ MonoBehaviour:
   id: 2
   idReserved: 0
   isMovable: 1
+  willBack: 0
+  willStick: 0
   Target: {fileID: 1688067507}
   TargetReserved: {fileID: 0}
 --- !u!50 &278717479
@@ -424,6 +426,8 @@ MonoBehaviour:
   id: 3
   idReserved: 0
   isMovable: 0
+  willBack: 0
+  willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
 --- !u!50 &407952589
@@ -512,6 +516,8 @@ MonoBehaviour:
   id: 1
   idReserved: 0
   isMovable: 1
+  willBack: 0
+  willStick: 0
   Target: {fileID: 946635678}
   TargetReserved: {fileID: 0}
 --- !u!50 &456597051
@@ -570,7 +576,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 43c4b9dc84a8384478e6c4cdb1e3bac9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1133,6 +1139,8 @@ MonoBehaviour:
   id: 0
   idReserved: 0
   isMovable: 0
+  willBack: 0
+  willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
 --- !u!50 &946635681
@@ -1220,6 +1228,8 @@ MonoBehaviour:
   id: 0
   idReserved: 0
   isMovable: 0
+  willBack: 0
+  willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
 --- !u!50 &1169437719
@@ -1657,6 +1667,8 @@ MonoBehaviour:
   id: 0
   idReserved: 0
   isMovable: 0
+  willBack: 0
+  willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
 --- !u!50 &1340124896
@@ -1839,6 +1851,8 @@ MonoBehaviour:
   id: 2
   idReserved: 0
   isMovable: 0
+  willBack: 0
+  willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
 --- !u!50 &1688067511
@@ -1996,7 +2010,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b3c6ed922942f83468e6db89d1e3bec7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2038,6 +2052,8 @@ MonoBehaviour:
   id: 0
   idReserved: 0
   isMovable: 0
+  willBack: 0
+  willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
 --- !u!50 &1897402988
