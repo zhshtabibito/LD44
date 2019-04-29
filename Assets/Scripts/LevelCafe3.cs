@@ -25,6 +25,10 @@ public class LevelCafe3 : LevelSM
     private GameObject CC;
     private GameObject NN;
 
+    private GameObject R1;
+    private GameObject R2;
+    private GameObject R3;
+
     public Sprite Chicken2;
     public Sprite fatherSoup;
     public Sprite fatherDage;
@@ -112,6 +116,18 @@ public class LevelCafe3 : LevelSM
             chicken.GetComponent<SpriteRenderer>().sprite = Chicken2;
             StartCoroutine("EatChicken");
         }
+        else if (id == 7) // wrong abc
+        {
+            obj.GetComponent<CharacterController2D>().Target.GetComponent<BoxCollider2D>().enabled = false;
+            obj.transform.parent = soup.transform;
+
+            if (R1 != null)
+                R1 = obj;
+            else if (R2 != null)
+                R2 = obj;
+            else if (R3 != null)
+                R3 = obj;
+        }
     }
 
     IEnumerator EatChicken()
@@ -128,9 +144,9 @@ public class LevelCafe3 : LevelSM
         {
             m_Audio.clip = audioWaterMix;
             m_Audio.Play();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.3f);
             soup.GetComponent<SpriteRenderer>().sprite = SoupHalf;
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.3f);
             soup.GetComponent<SpriteRenderer>().sprite = hasChicken ? SoupChickenPurple : SoupPurple;
             canClear = true;
 
@@ -164,6 +180,12 @@ public class LevelCafe3 : LevelSM
             CC.SetActive(false);
         if(NN != null)
             NN.SetActive(false);
+        if (R1 != null)
+            R1.SetActive(false);
+        if (R2 != null)
+            R2.SetActive(false);
+        if (R3 != null)
+            R3.SetActive(false);
         m_Audio.clip = audioDrink;
         m_Audio.Play();
         father.GetComponent<SpriteRenderer>().sprite = fatherSoup;
@@ -176,6 +198,12 @@ public class LevelCafe3 : LevelSM
             CC.SetActive(true);
         if (NN != null)
             NN.SetActive(true);
+        if (R1 != null)
+            R1.SetActive(true);
+        if (R2 != null)
+            R2.SetActive(true);
+        if (R3 != null)
+            R3.SetActive(true);
         soup.GetComponent<SpriteRenderer>().sprite = SoupEmpty;
         soup.transform.position = posSoup;
         soup.SetActive(true);

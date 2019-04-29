@@ -440,12 +440,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5a2dc5ecc6ba047bba3c3d4a86eafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  idReserved: 0
-  idReserved2: 0
+  id: 7
+  idReserved: 7
+  idReserved2: 7
   isMovable: 1
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 120171734}
   TargetReserved: {fileID: 1322687652}
   TargetReserved2: {fileID: 1059051398}
@@ -580,12 +581,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5a2dc5ecc6ba047bba3c3d4a86eafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  idReserved: 0
-  idReserved2: 0
+  id: 7
+  idReserved: 7
+  idReserved2: 7
   isMovable: 1
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 120171734}
   TargetReserved: {fileID: 1322687652}
   TargetReserved2: {fileID: 1059051398}
@@ -721,11 +723,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  idReserved: 0
-  idReserved2: 0
+  idReserved: 7
+  idReserved2: 7
   isMovable: 1
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 1322687652}
   TargetReserved: {fileID: 120171734}
   TargetReserved2: {fileID: 1059051398}
@@ -861,11 +864,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  idReserved: 0
-  idReserved2: 0
+  idReserved: 7
+  idReserved2: 7
   isMovable: 1
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 120171734}
   TargetReserved: {fileID: 1322687652}
   TargetReserved2: {fileID: 1059051398}
@@ -1203,6 +1207,7 @@ MonoBehaviour:
   isMovable: 0
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
   TargetReserved2: {fileID: 0}
@@ -1559,6 +1564,7 @@ MonoBehaviour:
   isMovable: 1
   willBack: 1
   willStick: 0
+  isClicked: 0
   Target: {fileID: 2060725253}
   TargetReserved: {fileID: 1544564342}
   TargetReserved2: {fileID: 0}
@@ -1703,11 +1709,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 3
-  idReserved: 0
-  idReserved2: 0
+  idReserved: 7
+  idReserved2: 7
   isMovable: 1
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 1059051398}
   TargetReserved: {fileID: 120171734}
   TargetReserved2: {fileID: 1322687652}
@@ -1897,6 +1904,7 @@ MonoBehaviour:
   isMovable: 0
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
   TargetReserved2: {fileID: 0}
@@ -2036,6 +2044,7 @@ MonoBehaviour:
   isMovable: 0
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
   TargetReserved2: {fileID: 0}
@@ -2106,12 +2115,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb5a2dc5ecc6ba047bba3c3d4a86eafb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  idReserved: 0
-  idReserved2: 0
+  id: 7
+  idReserved: 7
+  idReserved2: 7
   isMovable: 1
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 120171734}
   TargetReserved: {fileID: 1322687652}
   TargetReserved2: {fileID: 1059051398}
@@ -2295,11 +2305,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 2
-  idReserved: 0
-  idReserved2: 0
+  idReserved: 7
+  idReserved2: 7
   isMovable: 1
   willBack: 0
   willStick: 0
+  isClicked: 0
   Target: {fileID: 1322687652}
   TargetReserved: {fileID: 120171734}
   TargetReserved2: {fileID: 1059051398}
@@ -2522,6 +2533,7 @@ MonoBehaviour:
   isMovable: 1
   willBack: 1
   willStick: 1
+  isClicked: 0
   Target: {fileID: 1544564342}
   TargetReserved: {fileID: 0}
   TargetReserved2: {fileID: 0}
