@@ -5,7 +5,8 @@ using UnityEngine;
 public class Snooze996_2 : MonoBehaviour
 {
     
-    public AudioClip AudioBroken;
+    public AudioClip AudioBrokenSmall;
+    public AudioClip AudioBrokenBig;
     private AudioSource m_audio;
     // Start is called before the first frame update
     private Animator snoozeAnimator;
@@ -35,7 +36,7 @@ public class Snooze996_2 : MonoBehaviour
         if(GetComponent<Animator>().GetBool("Snooze_Bigger") == false)
         {
             snoozeAnimator.SetBool("Snooze_Broken1", true);
-            m_audio.clip = AudioBroken;
+            m_audio.clip = AudioBrokenSmall;
             m_audio.Play();
             StartCoroutine(WaitToDisable());
             StopCoroutine("SnoozeChange");
@@ -75,7 +76,7 @@ public class Snooze996_2 : MonoBehaviour
         police.GetComponent<AudioSource>().Stop();
 
         snoozeAnimator.SetTrigger("Snooze_Broken2");
-        m_audio.clip = AudioBroken;
+        m_audio.clip = AudioBrokenBig;
         m_audio.Play();
         
         //调整爆炸时间
