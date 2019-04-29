@@ -7,6 +7,7 @@ public class CanvasManager : MonoBehaviour
     public GameObject clearUI;
     public GameObject failUI;
     public GameObject pauseUI;
+    public GameObject hintUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +38,10 @@ public class CanvasManager : MonoBehaviour
     public void CloseFailUI()
     {
         failUI.SetActive(false);
+    }
+    public void SetHintUI()
+    {
+        hintUI.SetActive(true);
     }
 
 }

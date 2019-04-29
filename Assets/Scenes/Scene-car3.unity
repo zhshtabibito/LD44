@@ -189,7 +189,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2b254910f7b431846ac0aa7bf1870831, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -216,11 +216,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   idReserved: 0
+  idReserved2: 0
   isMovable: 1
   willBack: 0
   willStick: 0
   Target: {fileID: 1688067507}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &278717479
 Rigidbody2D:
   serializedVersion: 4
@@ -425,11 +427,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &407952589
 Rigidbody2D:
   serializedVersion: 4
@@ -515,11 +519,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   idReserved: 0
+  idReserved2: 0
   isMovable: 1
   willBack: 0
   willStick: 0
   Target: {fileID: 946635678}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &456597051
 Rigidbody2D:
   serializedVersion: 4
@@ -576,7 +582,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 43c4b9dc84a8384478e6c4cdb1e3bac9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1138,11 +1144,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &946635681
 Rigidbody2D:
   serializedVersion: 4
@@ -1227,11 +1235,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1169437719
 Rigidbody2D:
   serializedVersion: 4
@@ -1497,6 +1507,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 304063017343986073, guid: 7e17def66547a487dbe5268b1cc38ffa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738815742729119632, guid: 7e17def66547a487dbe5268b1cc38ffa,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d5115e3f98af14bf4b56cb60be7cbc67,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e17def66547a487dbe5268b1cc38ffa, type: 3}
 --- !u!1001 &1253289823
@@ -1666,11 +1687,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1340124896
 Rigidbody2D:
   serializedVersion: 4
@@ -1850,11 +1873,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 2
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1688067511
 Rigidbody2D:
   serializedVersion: 4
@@ -2010,7 +2035,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b3c6ed922942f83468e6db89d1e3bec7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2051,11 +2076,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1897402988
 Rigidbody2D:
   serializedVersion: 4

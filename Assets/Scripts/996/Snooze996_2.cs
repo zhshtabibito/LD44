@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Snooze996_2 : MonoBehaviour
 {
+    
+    public AudioClip AudioBroken;
+    private AudioSource m_audio;
     // Start is called before the first frame update
     private Animator snoozeAnimator;
     public float waitTime;
@@ -16,6 +19,7 @@ public class Snooze996_2 : MonoBehaviour
     {
         snoozeAnimator = GetComponent<Animator>();
         cR = SnoozeChange();
+        m_audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +31,8 @@ public class Snooze996_2 : MonoBehaviour
         if(GetComponent<Animator>().GetBool("Snooze_Bigger") == false)
         {
             snoozeAnimator.SetBool("Snooze_Broken1", true);
+            m_audio.clip = AudioBroken;
+            m_audio.Play();
             StartCoroutine(WaitToDisable());
             StopCoroutine("SnoozeChange");
             Debug.Log("snooze broken 1");
@@ -62,12 +68,14 @@ public class Snooze996_2 : MonoBehaviour
     public IEnumerator BiggerBroken()
     {
         snoozeAnimator.SetTrigger("Snooze_Broken2");
+        m_audio.clip = AudioBroken;
+        m_audio.Play();
         yield return new WaitForSeconds(1.0f);
 
         GetComponent<SpriteRenderer>().enabled = false;
         father.GetComponent<Father996_2>().Dead();
         yield return new WaitForSeconds(3.0f);
-        
+
         FindObjectOfType<LevelManager>().LevelClear();
     }
 }

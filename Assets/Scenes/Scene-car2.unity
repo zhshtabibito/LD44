@@ -287,11 +287,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &407952589
 Rigidbody2D:
   serializedVersion: 4
@@ -932,7 +934,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7c6590055ebfbe845b1d9c5f5cc4e7a3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -973,11 +975,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1340124896
 Rigidbody2D:
   serializedVersion: 4
@@ -1206,11 +1210,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1744328257
 Rigidbody2D:
   serializedVersion: 4
@@ -1428,7 +1434,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b3c6ed922942f83468e6db89d1e3bec7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1469,11 +1475,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1897402988
 Rigidbody2D:
   serializedVersion: 4
@@ -1710,5 +1718,16 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 304063017343986073, guid: 7e17def66547a487dbe5268b1cc38ffa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738815742729119632, guid: 7e17def66547a487dbe5268b1cc38ffa,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: e4aa936bf50e540688d5e2688acfeb86,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e17def66547a487dbe5268b1cc38ffa, type: 3}

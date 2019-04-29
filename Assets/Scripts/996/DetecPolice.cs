@@ -12,13 +12,13 @@ public class DetecPolice : MonoBehaviour
     private LevelManager lm;
     void Start()
     {
-        
+        m_audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_audio = GetComponent<AudioSource>();
+        
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -32,6 +32,7 @@ public class DetecPolice : MonoBehaviour
         m_audio.clip = audioAllert;
         m_audio.Play();
         police.GetComponent<AudioSource>().Stop();
+        father.GetComponent<AudioSource>().Stop();
         lm = FindObjectOfType<LevelManager>();
         police.gameObject.GetComponent<Animator>().SetTrigger("Notice_Father");
         yield return new WaitForSeconds(0.1f);

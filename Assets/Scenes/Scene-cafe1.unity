@@ -255,7 +255,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1496166685
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 044c9cd9ec349ad4781f9c5131ef3f65, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -334,7 +334,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2d1e8bbeb0c453d4790b0ffe79f49433, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -482,7 +482,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3f15e8604948b454e85e687c2d5a2e6c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -659,6 +659,17 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 304063017343986073, guid: 7e17def66547a487dbe5268b1cc38ffa,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2738815742729119632, guid: 7e17def66547a487dbe5268b1cc38ffa,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 0bac3192cfc1c47639cd830331b3d316,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e17def66547a487dbe5268b1cc38ffa, type: 3}
 --- !u!1 &900883174
@@ -730,7 +741,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 81666bf47bb531d43a98883d95340bd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -776,11 +787,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &900883179
 Rigidbody2D:
   serializedVersion: 4
@@ -932,7 +945,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6530f7665fd4d5d429f3a0d8594b3404, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -959,11 +972,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   idReserved: 2
+  idReserved2: 0
   isMovable: 1
   willBack: 0
   willStick: 0
   Target: {fileID: 2060725253}
   TargetReserved: {fileID: 385162644}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1099522037
 Rigidbody2D:
   serializedVersion: 4
@@ -1146,11 +1161,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1544564346
 Rigidbody2D:
   serializedVersion: 4
@@ -1267,11 +1284,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 0
   idReserved: 0
+  idReserved2: 0
   isMovable: 0
   willBack: 0
   willStick: 0
   Target: {fileID: 0}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &1765407700
 Rigidbody2D:
   serializedVersion: 4
@@ -1520,7 +1539,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -973939603
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aa4c5d26365d71d449a12a3d7963f064, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1547,11 +1566,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   idReserved: 0
+  idReserved2: 0
   isMovable: 1
   willBack: 1
   willStick: 1
   Target: {fileID: 1407774961}
   TargetReserved: {fileID: 0}
+  TargetReserved2: {fileID: 0}
 --- !u!50 &2060725257
 Rigidbody2D:
   serializedVersion: 4
