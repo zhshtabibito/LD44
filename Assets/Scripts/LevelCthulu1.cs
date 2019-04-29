@@ -83,6 +83,8 @@ public class LevelCthulu1 : LevelCthuluTemplate
         DarkBackground2.SetActive(true);
         Magic.SetActive(true);
         ObjectReplace(Father, PaganFather);
+        m_Audio.clip = AudioCthulu;
+        m_Audio.Play();
         SetMovement(Cthulu, PaganFather, new Vector2(-3.2f, 12.0f), new Vector2(-3.2f, 1.5f), 3.0f);
         yield return new WaitForSeconds(4);
         state = CLEAR;

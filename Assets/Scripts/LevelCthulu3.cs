@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelCthulu3 : LevelCthuluTemplate
 {
     public AudioClip AudioTED;
+
     public List<GameObject> LettersFixed, Letters, LettersDark;
     public GameObject TED;
     public GameObject Carpet;

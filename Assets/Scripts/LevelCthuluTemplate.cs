@@ -14,6 +14,7 @@ public abstract class LevelCthuluTemplate : LevelSM
     public AudioClip AudioDrop;
     public AudioClip AudioOpen;
     public AudioClip AudioHeap;
+    public AudioClip AudioCthulu;
 
     public GameObject Background;
     public GameObject Magic;

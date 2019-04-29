@@ -123,6 +123,8 @@ public class LevelCthulu2 : LevelCthuluTemplate
         GroupBubble.SetActive(false);
         ObjectReplace(Phone2, Phone);
         ObjectReplace(FatherCalling, Father);
+        m_Audio.clip = AudioCthulu;
+        m_Audio.Play();
         SetMovement(Cthulu, Father, new Vector2(-2.5f, 12.0f), new Vector2(-2.5f, 1.5f), 3.0f);
         StartCoroutine("WaitForClear");
     }
