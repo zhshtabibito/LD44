@@ -8,6 +8,7 @@ using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour
 {
+    private LevelManager lm;
     Rigidbody2D m_Rigidbody2D;
 
     private Vector2 LastMousePos;
@@ -25,6 +26,7 @@ public class CharacterController2D : MonoBehaviour
     public GameObject Target = null;
     public GameObject TargetReserved = null;
     public GameObject TargetReserved2 = null;
+    //public AudioClip BGM3;
 
     Vector3 StartPos;
 
@@ -40,6 +42,11 @@ public class CharacterController2D : MonoBehaviour
         isArrival = false;
         m_Rigidbody2D = GetComponent<Rigidbody2D>();
         sm = GetComponentInParent<LevelSM>();
+    }
+
+    private void Start()
+    {
+        
     }
 
     private void Update()

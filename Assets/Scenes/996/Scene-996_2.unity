@@ -973,10 +973,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae647e4662ece4c18ae0e7f51110784a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioBroken: {fileID: 8300000, guid: cbb14800ecc5f4f9c95ff842da16b556, type: 3}
+  AudioBroken: {fileID: 8300000, guid: bcfcf149b138f4bbeb804f86100e49dd, type: 3}
   waitTime: 1
   father: {fileID: 237418406}
-  biggerTime: 2
+  police: {fileID: 1736503023}
+  biggerTime: 8
   whiteImage: {fileID: 1210553526}
 --- !u!70 &1427522249
 CapsuleCollider2D:

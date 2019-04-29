@@ -14,6 +14,8 @@ public class offerSM : LevelSM
     private bool trigger;
     public GameObject offer;
     public GameObject offerImage;
+    public AudioClip BGM2;
+    private LevelManager lm;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,9 @@ public class offerSM : LevelSM
         alpha6 = 0;
         state = 0;
         trigger = false;
+        lm = FindObjectOfType<LevelManager>();
+        lm.GetComponent<AudioSource>().clip = BGM2;
+        lm.GetComponent<AudioSource>().Play();
     }
 
     // Update is called once per frame

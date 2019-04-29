@@ -9,32 +9,44 @@ EditorBuildSettings:
     path: Assets/Scenes/Start Menu.unity
     guid: 6676255c2e5344d78955af484d40253a
   - enabled: 1
-    path: Assets/Scenes/Scene-car1.unity
+    path: Assets/Scenes/car/Scene-car1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Scene-car2.unity
+    path: Assets/Scenes/car/Scene-car2.unity
     guid: c884a7857f5faaf4eb24ca773d862fd3
   - enabled: 1
-    path: Assets/Scenes/Scene-car3.unity
+    path: Assets/Scenes/car/Scene-car3.unity
     guid: 82a4f66795c4f7a4ca12eb5db1e030af
   - enabled: 1
-    path: Assets/Scenes/Scene-cafe1.unity
+    path: Assets/Scenes/cafe/Scene-cafe1.unity
     guid: 0c80eee8e508fba429ba54e6afd3c213
   - enabled: 1
-    path: Assets/Scenes/Scene-cafe2.unity
+    path: Assets/Scenes/cafe/Scene-cafe2.unity
     guid: 9a191e7632f82504fa3d83ee39e449de
   - enabled: 1
-    path: Assets/Scenes/Scene-cafe3.unity
+    path: Assets/Scenes/cafe/Scene-cafe3.unity
     guid: 6ccc82c2a3550cb40b0f6d4c27da8434
+  - enabled: 1
+    path: Assets/Scenes/cthulu/Scene-cthulu1.unity
+    guid: c00abb24806308e49a9c2022e5f8088f
+  - enabled: 1
+    path: Assets/Scenes/cthulu/Scene-cthulu2.unity
+    guid: b5c42e428aca2fb4eb503c1bc8ec4cf0
+  - enabled: 1
+    path: Assets/Scenes/cthulu/Scene-cthulu3.unity
+    guid: dc8cf96ff4445d74f8e3f09c59ca05d4
   - enabled: 1
     path: Assets/Scenes/OfferScene.unity
     guid: 342733f0c315f4e02a434f1994545924
   - enabled: 1
-    path: Assets/Scenes/Scene-996_1.unity
+    path: Assets/Scenes/996/Scene-996_1.unity
     guid: 1a1d61f5e21a44f22b708adba9caaea3
   - enabled: 1
-    path: Assets/Scenes/Scene-996_2.unity
+    path: Assets/Scenes/996/Scene-996_2.unity
     guid: 692c170c256254dcda51bbf62340e846
+  - enabled: 1
+    path: Assets/Scenes/Staff.unity
+    guid: de49c3535970f7f4ca42d157769a8710
   - enabled: 1
     path: Assets/Scenes/StoryScene/Opening.unity
     guid: c5d3a5c3d0d49479488376664015522d

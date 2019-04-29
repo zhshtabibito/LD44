@@ -6,6 +6,15 @@ public class LevelCafe3 : LevelSM
 {
     private LevelManager lm;
     private AudioSource m_Audio;
+    public AudioClip audioHitGlass;
+    public AudioClip audioWaterMix;
+    public AudioClip audioHa;
+    public AudioClip audioHitFather;
+    public AudioClip audioBallFly;
+    public AudioClip audioDrink;
+    public AudioClip audioDie;
+    public AudioClip audioEat;
+    public AudioClip audioChickPot;
 
     public GameObject father;
     public GameObject soul;
@@ -41,7 +50,7 @@ public class LevelCafe3 : LevelSM
         canClear = false;
         posSoup = soup.transform.position;
         lm = FindObjectOfType<LevelManager>();
-        m_Audio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        m_Audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -92,6 +101,8 @@ public class LevelCafe3 : LevelSM
         else if (id == 5) // chicken pot
         {
             hasChicken = true;
+            m_Audio.clip = audioChickPot;
+            m_Audio.Play();
             chicken.GetComponent<SpriteRenderer>().sprite = Chicken2;
             soup.GetComponent<SpriteRenderer>().sprite = SoupChicken;
 
@@ -115,6 +126,8 @@ public class LevelCafe3 : LevelSM
     {
         if (K && C && N)
         {
+            m_Audio.clip = audioWaterMix;
+            m_Audio.Play();
             yield return new WaitForSeconds(1);
             soup.GetComponent<SpriteRenderer>().sprite = SoupHalf;
             yield return new WaitForSeconds(1);
@@ -130,8 +143,11 @@ public class LevelCafe3 : LevelSM
         KK.SetActive(false);
         CC.SetActive(false);
         NN.SetActive(false);
+        m_Audio.clip = audioDrink;
+        m_Audio.Play();
         father.GetComponent<SpriteRenderer>().sprite = fatherSoup;
         yield return new WaitForSeconds(2);
+
         father.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -4f));
         soul.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, 8f));
         yield return new WaitForSeconds(2);
@@ -148,8 +164,11 @@ public class LevelCafe3 : LevelSM
             CC.SetActive(false);
         if(NN != null)
             NN.SetActive(false);
+        m_Audio.clip = audioDrink;
+        m_Audio.Play();
         father.GetComponent<SpriteRenderer>().sprite = fatherSoup;
         yield return new WaitForSeconds(2);
+
         father.GetComponent<SpriteRenderer>().sprite = fatherDage;
         if (KK != null)
             KK.SetActive(true);

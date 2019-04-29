@@ -11,6 +11,7 @@ public class Snooze996_2 : MonoBehaviour
     private Animator snoozeAnimator;
     public float waitTime;
     public GameObject father;
+    public GameObject police;
     public float biggerTime;
     private IEnumerator cR;
     public SpriteRenderer whiteImage;
@@ -70,13 +71,16 @@ public class Snooze996_2 : MonoBehaviour
     }
     public IEnumerator BiggerBroken()
     {
+        father.GetComponent<AudioSource>().Stop();
+        police.GetComponent<AudioSource>().Stop();
+
         snoozeAnimator.SetTrigger("Snooze_Broken2");
         m_audio.clip = AudioBroken;
         m_audio.Play();
         
         //调整爆炸时间
         StartCoroutine(changeWhite());
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(3.0f);
         StartCoroutine(changeBack());
         yield return new WaitForSeconds(1.0f);
 
@@ -102,7 +106,7 @@ public class Snooze996_2 : MonoBehaviour
         Debug.Log("changing White");
         while(whiteAlpha >= 0f)
         {
-            whiteAlpha -= 0.1f;
+            whiteAlpha -= 0.04f;
             whiteImage.color = new Color(1.0f, 1.0f, 1.0f, whiteAlpha);
             yield return new WaitForFixedUpdate();
         }

@@ -64,4 +64,8 @@ public class StartMenuController : MonoBehaviour
             }
         PlayerPrefs.DeleteAll();
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
