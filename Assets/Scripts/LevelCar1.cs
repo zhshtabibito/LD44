@@ -9,7 +9,7 @@ public class LevelCar1 : LevelSM
     public AudioClip AudioBird;
     public AudioClip AudioEgg;
     public AudioClip AudioCar;
-    public AudioClip AudioAcci;
+    public AudioClip AudioHitFather;
     public AudioClip AudioStop;
     public AudioClip AudioGrandma;
 
@@ -113,6 +113,8 @@ public class LevelCar1 : LevelSM
             yield return new WaitForSeconds(0.2f);
             father.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
             car.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
+            m_Audio.clip = AudioHitFather;
+            m_Audio.Play();
             Debug.Log("Die");
             father.GetComponent<Animator>().SetTrigger("Run2Die");
             // clear and UI

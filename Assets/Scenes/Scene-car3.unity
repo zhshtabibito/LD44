@@ -953,9 +953,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioBird: {fileID: 8300000, guid: 1be9403ee91847c4a8641428a0b43ed6, type: 3}
-  AudioPig: {fileID: 0}
+  AudioPig: {fileID: 8300000, guid: d9b98b625a1db4f31be2bec8e3761980, type: 3}
   AudioCar: {fileID: 8300000, guid: fff3b59fb5cd6a341a5274917bac65d4, type: 3}
-  AudioStop: {fileID: 8300000, guid: 4443db73cbc40c94ea85dfd6f69c97cc, type: 3}
+  AudioStop: {fileID: 8300000, guid: 58eb319ee92154959aeee04321d344a5, type: 3}
   car: {fileID: 407952584}
   grandma: {fileID: 1340124892}
   father: {fileID: 1897402983}

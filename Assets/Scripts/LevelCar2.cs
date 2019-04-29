@@ -90,13 +90,15 @@ public class LevelCar2 : LevelSM
     IEnumerator WaitAndClear()
     {
         // TODO: 汽车鸣笛音效
+        
+
+        yield return new WaitForSeconds(3);
         m_audio.clip = AudioCar2;
         m_audio.Play();
-
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(1);
         car2.SetActive(true);
         car2.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -2));
-
+        
         // TODO: 撞车音效
         m_audio.clip = AudioHitCar;
         m_audio.Play();

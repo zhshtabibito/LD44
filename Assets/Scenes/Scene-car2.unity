@@ -681,8 +681,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AudioStop: {fileID: 8300000, guid: 4443db73cbc40c94ea85dfd6f69c97cc, type: 3}
   AudioCar: {fileID: 8300000, guid: fff3b59fb5cd6a341a5274917bac65d4, type: 3}
-  AudioCar2: {fileID: 0}
-  AudioHitCar: {fileID: 0}
+  AudioCar2: {fileID: 8300000, guid: 5183af5d65996422986d2835a560440a, type: 3}
+  AudioHitCar: {fileID: 8300000, guid: 10d0d3adf7e914d28bf5c3ad47808c0e, type: 3}
   car1: {fileID: 407952584}
   car2: {fileID: 1744328255}
   grandma: {fileID: 1340124892}

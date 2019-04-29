@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class DetecPolice : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private AudioSource m_audio;
+    public AudioClip audioAllert;
+    
     public Father996 father;
     public Police996 police;
     private LevelManager lm;
@@ -16,7 +18,7 @@ public class DetecPolice : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        m_audio = GetComponent<AudioSource>();
     }
     void OnTriggerStay2D(Collider2D other)
     {
@@ -27,6 +29,9 @@ public class DetecPolice : MonoBehaviour
     }
     public IEnumerator WaitToFail()
     {
+        m_audio.clip = audioAllert;
+        m_audio.Play();
+        police.GetComponent<AudioSource>().Stop();
         lm = FindObjectOfType<LevelManager>();
         police.gameObject.GetComponent<Animator>().SetTrigger("Notice_Father");
         yield return new WaitForSeconds(0.1f);
