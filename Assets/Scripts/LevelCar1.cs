@@ -11,6 +11,7 @@ public class LevelCar1 : LevelSM
     public AudioClip AudioCar;
     public AudioClip AudioAcci;
     public AudioClip AudioStop;
+    public AudioClip AudioGrandma;
 
     public GameObject car;
     public GameObject grandma;
@@ -30,7 +31,7 @@ public class LevelCar1 : LevelSM
     {
         canClear = false;
         lm = FindObjectOfType<LevelManager>();
-        m_Audio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
+        m_Audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -47,6 +48,8 @@ public class LevelCar1 : LevelSM
         }
         else if (id == 2) // bird
         {
+            m_Audio.clip = AudioBird;
+            m_Audio.Play();
             Vector3 tar = grandma.transform.position + new Vector3(0, 5, 0);
             bird.GetComponent<CharacterController2D>().MoveTo(tar);
             egg.transform.position = tar;
@@ -69,6 +72,8 @@ public class LevelCar1 : LevelSM
         yield return new WaitForSeconds(1.5f);
         egg.SetActive(false);
         grandma.GetComponent<SpriteRenderer>().sprite = GameObject.Find("grandma2").GetComponent<SpriteRenderer>().sprite;
+        m_Audio.clip = AudioGrandma;
+        m_Audio.Play();
         canClear = true;
         grandma.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
         driver1.SetActive(false);
@@ -85,6 +90,8 @@ public class LevelCar1 : LevelSM
 
     IEnumerator WaitAndMove()
     {
+        m_Audio.clip = AudioCar;
+        m_Audio.Play();
         yield return new WaitForSeconds(2);
         if (!canClear)
         {
@@ -125,6 +132,8 @@ public class LevelCar1 : LevelSM
         yield return new WaitForSeconds(0.5f);
         father.GetComponent<CharacterController2D>().MoveSpd(Vector2.zero);
         father.GetComponent<Animator>().SetTrigger("Run2Idle");
+        m_Audio.clip = AudioStop;
+        m_Audio.Play();
         // fail and UI
         lm.LevelFail();
     }
