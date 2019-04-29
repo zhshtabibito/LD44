@@ -95,7 +95,7 @@ public class LevelCar2 : LevelSM
         yield return new WaitForSeconds(1);
         m_audio.clip = AudioCar2;
         m_audio.Play();
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(5);
         car2.SetActive(true);
         car2.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -2));
         

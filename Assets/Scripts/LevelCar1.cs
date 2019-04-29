@@ -117,6 +117,7 @@ public class LevelCar1 : LevelSM
             m_Audio.Play();
             Debug.Log("Die");
             father.GetComponent<Animator>().SetTrigger("Run2Die");
+            yield return new WaitForSeconds(2);
             // clear and UI
             lm.LevelClear();
         }
@@ -136,6 +137,7 @@ public class LevelCar1 : LevelSM
         father.GetComponent<Animator>().SetTrigger("Run2Idle");
         m_Audio.clip = AudioStop;
         m_Audio.Play();
+        yield return new WaitForSeconds(2);
         // fail and UI
         lm.LevelFail();
     }

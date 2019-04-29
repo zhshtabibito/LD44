@@ -16,16 +16,30 @@ public class LevelCafe3 : LevelSM
     private GameObject CC;
     private GameObject NN;
 
+    public Sprite Chicken2;
+    public Sprite fatherSoup;
+    public Sprite fatherDage;
+
+    private bool hasChicken;
+    public Sprite SoupChicken;
+    public Sprite SoupHalf;
+    public Sprite SoupPurple;
+    public Sprite SoupChickenPurple;
+    public Sprite SoupEmpty;
+
     private bool K;
     private bool C;
     private bool N;
 
     public bool canClear;
 
+    private Vector3 posSoup;
+
     // Start is called before the first frame update
     void Start()
     {
         canClear = false;
+        posSoup = soup.transform.position;
         lm = FindObjectOfType<LevelManager>();
         m_Audio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
     }
@@ -75,11 +89,26 @@ public class LevelCafe3 : LevelSM
             }
 
         }
-        else if (id == 5) // chicken
+        else if (id == 5) // chicken pot
         {
-            chicken.GetComponent<SpriteRenderer>().sprite = GameObject.Find("Chicken2").GetComponent<SpriteRenderer>().sprite;
+            hasChicken = true;
+            chicken.GetComponent<SpriteRenderer>().sprite = Chicken2;
+            soup.GetComponent<SpriteRenderer>().sprite = SoupChicken;
 
         }
+        else if (id == 6) // chicken father
+        {
+            chicken.GetComponent<SpriteRenderer>().sprite = Chicken2;
+            StartCoroutine("EatChicken");
+        }
+    }
+
+    IEnumerator EatChicken()
+    {
+        Sprite s = father.GetComponent<SpriteRenderer>().sprite;
+        father.GetComponent<SpriteRenderer>().sprite = fatherDage;
+        yield return new WaitForSeconds(1);
+        father.GetComponent<SpriteRenderer>().sprite = s;
     }
 
     IEnumerator SoupChange()
@@ -87,9 +116,9 @@ public class LevelCafe3 : LevelSM
         if (K && C && N)
         {
             yield return new WaitForSeconds(1);
-            soup.GetComponent<SpriteRenderer>().sprite = GameObject.Find("Soup2").GetComponent<SpriteRenderer>().sprite;
+            soup.GetComponent<SpriteRenderer>().sprite = SoupHalf;
             yield return new WaitForSeconds(1);
-            soup.GetComponent<SpriteRenderer>().sprite = GameObject.Find("Soup3").GetComponent<SpriteRenderer>().sprite;
+            soup.GetComponent<SpriteRenderer>().sprite = hasChicken ? SoupChickenPurple : SoupPurple;
             canClear = true;
 
         }
@@ -101,7 +130,7 @@ public class LevelCafe3 : LevelSM
         KK.SetActive(false);
         CC.SetActive(false);
         NN.SetActive(false);
-        father.GetComponent<SpriteRenderer>().sprite = GameObject.Find("FatherSoup").GetComponent<SpriteRenderer>().sprite;
+        father.GetComponent<SpriteRenderer>().sprite = fatherSoup;
         yield return new WaitForSeconds(2);
         father.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -4f));
         soul.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, 8f));
@@ -119,10 +148,18 @@ public class LevelCafe3 : LevelSM
             CC.SetActive(false);
         if(NN != null)
             NN.SetActive(false);
-        Sprite s = father.GetComponent<SpriteRenderer>().sprite;
-        father.GetComponent<SpriteRenderer>().sprite = GameObject.Find("FatherSoup").GetComponent<SpriteRenderer>().sprite;
+        father.GetComponent<SpriteRenderer>().sprite = fatherSoup;
         yield return new WaitForSeconds(2);
-        father.GetComponent<SpriteRenderer>().sprite = s;
+        father.GetComponent<SpriteRenderer>().sprite = fatherDage;
+        if (KK != null)
+            KK.SetActive(true);
+        if (CC != null)
+            CC.SetActive(true);
+        if (NN != null)
+            NN.SetActive(true);
+        soup.GetComponent<SpriteRenderer>().sprite = SoupEmpty;
+        soup.transform.position = posSoup;
+        soup.SetActive(true);
         yield return new WaitForSeconds(2);
         lm.LevelFail();
 

@@ -14,6 +14,9 @@ public class LevelCafe1 : LevelSM
     public GameObject juice2;
     public GameObject KCN2;
     public GameObject juice3;
+    private Sprite fatherOri;
+    public Sprite fatherDrinkKCN;
+    public Sprite fatherDrinkJuice;
     public GameObject ball;
 
     public bool canClear;
@@ -21,6 +24,8 @@ public class LevelCafe1 : LevelSM
     // Start is called before the first frame update
     void Start()
     {
+        fatherOri = father.GetComponent<SpriteRenderer>().sprite;
+
         canClear = false;
         lm = FindObjectOfType<LevelManager>();
         m_Audio = GameObject.Find("Main Camera").GetComponent<AudioSource>();
@@ -43,11 +48,14 @@ public class LevelCafe1 : LevelSM
         else if (id == 2) // KCN -> mouth
         {     
             KCN.SetActive(false);
-            KCN2.SetActive(true);
+            juice.GetComponent<CapsuleCollider2D>().enabled = false;
+            father.GetComponent<SpriteRenderer>().sprite = fatherDrinkKCN;
             StartCoroutine("WaitAndDie");
         }
         else if(id == 3) // juice
         {
+            juice.SetActive(false);
+            father.GetComponent<SpriteRenderer>().sprite = fatherDrinkJuice;
             StartCoroutine("WaitAndBall");
         }
     }
@@ -73,12 +81,13 @@ public class LevelCafe1 : LevelSM
     {
         yield return new WaitForSeconds(1f);
         ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(0, -2));
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
+        juice3.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
         KCN.SetActive(false);
         KCN2.SetActive(true);
-        juice.SetActive(false);
-        juice3.transform.position = juice.transform.position;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.5f);    
+        father.GetComponent<SpriteRenderer>().sprite = fatherOri;
         juice3.SetActive(false);
         juice2.SetActive(true);
         ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(-12, 5));

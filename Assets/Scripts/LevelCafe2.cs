@@ -9,11 +9,18 @@ public class LevelCafe2 : LevelSM
 
     public GameObject father;
     public GameObject soul;
+    public GameObject mouth;
     public GameObject K;
     public GameObject r;
     public GameObject Kr;
     public GameObject K2;
+    public GameObject r2;
+    public GameObject K3;
     public GameObject ball;
+    public Sprite fatherHitBall;
+    public Sprite fatherKr;
+    public Sprite fatherR;
+    public Sprite fatherDage;
 
     public bool canClear;
 
@@ -39,22 +46,86 @@ public class LevelCafe2 : LevelSM
             K.SetActive(false);
             r.SetActive(false);
             Kr.SetActive(true);
+            StartCoroutine("WaitAndBall");
         }
         else if (id == 2) // Kr -> mouth
         {
-            if (canClear)
-            {
-                StartCoroutine("WaitAndDie");
-            }
-            else
-            {
-                StartCoroutine("WaitAndBall");
-            }
+            StartCoroutine("WaitAndDie");
         }
-        else if(id == 3) // superman appear
+        else if (id == 3) // superman appear
         {
             StartCoroutine("WaitAndSuper");
         }
+        else if (id == 4) // K mouth
+        {
+            StartCoroutine("WaitAndK");
+        }
+        else if (id == 5) // r mouth
+        {
+            StartCoroutine("WaitAndR");
+        }
+    }
+
+    IEnumerator WaitAndK()
+    {
+        if (canClear)
+        {
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(6, 3));
+            yield return new WaitForSeconds(0.5f);
+            father.GetComponent<SpriteRenderer>().sprite = fatherHitBall;
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(12, 5));
+            yield return new WaitForSeconds(0.5f);
+            father.GetComponent<SpriteRenderer>().sprite = fatherKr;
+            K.SetActive(false);
+            yield return new WaitForSeconds(2f);
+            father.GetComponent<SpriteRenderer>().sprite = fatherDage;
+            yield return new WaitForSeconds(2f);
+            lm.LevelFail();
+
+        }
+        else
+        {
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(0, -2));
+            yield return new WaitForSeconds(0.5f);
+            K.SetActive(false);
+            r.SetActive(false);
+            r2.SetActive(true);
+            K3.SetActive(true);
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(-12, 5));
+            yield return new WaitForSeconds(2f);
+            lm.LevelFail();
+        }
+    }
+
+    IEnumerator WaitAndR()
+    {
+        if (canClear)
+        {
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(6, 3));
+            yield return new WaitForSeconds(0.5f);
+            father.GetComponent<SpriteRenderer>().sprite = fatherHitBall;
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(12, 5));
+            yield return new WaitForSeconds(0.5f);
+            father.GetComponent<SpriteRenderer>().sprite = fatherR;
+            r.SetActive(false);
+            yield return new WaitForSeconds(2f);
+            father.GetComponent<SpriteRenderer>().sprite = fatherDage;
+            yield return new WaitForSeconds(2f);
+            lm.LevelFail();
+        }
+        else
+        {
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(0, -2));
+            yield return new WaitForSeconds(0.5f);
+            K.SetActive(false);
+            r.SetActive(false);
+            r2.SetActive(true);
+            K3.SetActive(true);
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(-12, 5));
+            yield return new WaitForSeconds(2f);
+            lm.LevelFail();
+        }
+
     }
 
     IEnumerator WaitAndSuper()
@@ -62,38 +133,41 @@ public class LevelCafe2 : LevelSM
         yield return new WaitForSeconds(0.5f);
         canClear = true;
         father.GetComponent<CharacterController2D>().MoveTo(new Vector2(father.transform.position.x, father.transform.position.y + 3));
+        yield return new WaitForSeconds(0.5f);
+        // mouth.GetComponent<CapsuleCollider2D>().enabled = true;
     }
 
     IEnumerator WaitAndBall()
     {
-        ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(0, -2));
-        yield return new WaitForSeconds(0.5f);
-        Kr.SetActive(false);
-        K2.SetActive(true);
-        ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(-12, 5));
-        yield return new WaitForSeconds(2f);
-        lm.LevelFail();
-
+        if (canClear)
+        {
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(6, 3));
+            yield return new WaitForSeconds(0.5f);
+            father.GetComponent<SpriteRenderer>().sprite = fatherHitBall;
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(12, 5));
+            yield return new WaitForSeconds(2f);
+        }
+        else
+        {
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(0, -2));
+            yield return new WaitForSeconds(0.5f);
+            Kr.SetActive(false);
+            K2.SetActive(true);
+            ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(-12, 5));
+            yield return new WaitForSeconds(2f);
+            lm.LevelFail();
+        }         
     }
 
     IEnumerator WaitAndDie()
     {
-
-        ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(6, 3));
-        yield return new WaitForSeconds(0.5f);
-        ball.GetComponent<CharacterController2D>().MoveTo(new Vector2(12, 5));
-        yield return new WaitForSeconds(2f);
-
         Kr.SetActive(false);
-        K2.SetActive(true);
-
+        father.GetComponent<SpriteRenderer>().sprite = fatherKr;
         yield return new WaitForSeconds(2f);
         father.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, -4f));
         soul.GetComponent<CharacterController2D>().MoveSpd(new Vector2(0, 8f));
-
         yield return new WaitForSeconds(2f);
-        lm.LevelClear();
-      
+        lm.LevelClear();  
     }
 
 }
