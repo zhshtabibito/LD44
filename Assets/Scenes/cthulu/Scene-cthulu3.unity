@@ -305,6 +305,7 @@ MonoBehaviour:
   AudioDrop: {fileID: 8300000, guid: c85ec681625224e8382ebd1844d80ade, type: 3}
   AudioOpen: {fileID: 8300000, guid: 9a614d29e52f14a82b3c84d8a8b5b426, type: 3}
   AudioHeap: {fileID: 8300000, guid: aaaa2b9f788124567ae25dd3e1a9b35e, type: 3}
+  AudioCthulu: {fileID: 8300000, guid: 54120de282ddc2a448956dcd7da231cb, type: 3}
   Background: {fileID: 888622374}
   Magic: {fileID: 0}
   Father: {fileID: 1836837686}

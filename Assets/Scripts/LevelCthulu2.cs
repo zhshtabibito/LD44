@@ -85,6 +85,7 @@ public class LevelCthulu2 : LevelCthuluTemplate
         {
             if(state < 6)
             {
+                state = 9;
                 Magic.SetActive(true);
                 DeadBook.SetActive(false);
                 DarkBackground2.SetActive(true);
@@ -99,6 +100,7 @@ public class LevelCthulu2 : LevelCthuluTemplate
         {
             if(state == 5)
             {
+                state = 10;
                 ObjectReplace(Phone, Phone2);
                 ObjectReplace(Father, FatherCalling);
                 m_Audio.clip = AudioPhone;
