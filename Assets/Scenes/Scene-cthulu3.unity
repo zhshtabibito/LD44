@@ -308,6 +308,7 @@ MonoBehaviour:
   Shelf: {fileID: 1719721398}
   BlueBook: {fileID: 1285718321}
   DeadBook: {fileID: 390658732}
+  DarkBackground2: {fileID: 1347674340}
   LettersFixed: []
   Letters: []
   LettersDark: []
@@ -315,7 +316,6 @@ MonoBehaviour:
   Carpet: {fileID: 906958569}
   PaganFather: {fileID: 1703125365}
   DarkBackground: {fileID: 278916998}
-  DarkBackground2: {fileID: 1347674340}
   Light: {fileID: 832911142}
 --- !u!4 &218418232
 Transform:
@@ -3745,7 +3745,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 38f5dbadfa8d32c4f86ede3d7b19cf12, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 215f3eddef6ea2a4984e3549af8d4f6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4398,7 +4398,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1e3334c7df0627f4a8886a036ea96023, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3c6ed922942f83468e6db89d1e3bec7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
