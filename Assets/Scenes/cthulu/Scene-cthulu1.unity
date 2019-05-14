@@ -216,6 +216,7 @@ GameObject:
   - component: {fileID: 479261363}
   - component: {fileID: 479261362}
   - component: {fileID: 479261361}
+  - component: {fileID: 479261364}
   m_Layer: 0
   m_Name: Bubble
   m_TagString: Untagged
@@ -254,7 +255,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -344,6 +345,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &479261364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 479261358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &537693526
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,6 +615,8 @@ GameObject:
   - component: {fileID: 707709623}
   - component: {fileID: 707709622}
   - component: {fileID: 707709621}
+  - component: {fileID: 707709625}
+  - component: {fileID: 707709626}
   m_Layer: 0
   m_Name: BlueBook
   m_TagString: Untagged
@@ -699,7 +714,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -730,6 +745,34 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &707709625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707709619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &707709626
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707709619}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.8899999, y: 1.4399999}
+  m_Direction: 0
 --- !u!1 &888164523
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,8 +994,10 @@ GameObject:
   - component: {fileID: 945092474}
   - component: {fileID: 945092475}
   - component: {fileID: 945092478}
+  - component: {fileID: 945092479}
   - component: {fileID: 945092477}
   - component: {fileID: 945092476}
+  - component: {fileID: 945092480}
   m_Layer: 0
   m_Name: YellowBook
   m_TagString: Untagged
@@ -991,7 +1036,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1081,6 +1126,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &945092479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945092473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!70 &945092480
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 945092473}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.7099999, y: 1.7699999}
+  m_Direction: 0
 --- !u!1 &1178762091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,6 +1511,7 @@ GameObject:
   - component: {fileID: 1346816475}
   - component: {fileID: 1346816474}
   - component: {fileID: 1346816473}
+  - component: {fileID: 1346816477}
   m_Layer: 0
   m_Name: DeadBook
   m_TagString: Untagged
@@ -1535,7 +1609,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1566,6 +1640,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1346816477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346816471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1702305014
 GameObject:
   m_ObjectHideFlags: 0
@@ -1720,6 +1806,7 @@ GameObject:
   - component: {fileID: 1801911950}
   - component: {fileID: 1801911949}
   - component: {fileID: 1801911952}
+  - component: {fileID: 1801911953}
   m_Layer: 0
   m_Name: Shelf
   m_TagString: Untagged
@@ -1817,7 +1904,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1848,6 +1935,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1801911953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801911947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1814820484
 GameObject:
   m_ObjectHideFlags: 0

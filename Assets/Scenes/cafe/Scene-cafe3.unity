@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 211447316}
   - component: {fileID: 211447315}
   - component: {fileID: 211447314}
+  - component: {fileID: 211447318}
   m_Layer: 0
   m_Name: E
   m_TagString: Untagged
@@ -504,7 +505,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -535,6 +536,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &211447318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211447312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &303764838
 GameObject:
   m_ObjectHideFlags: 0
@@ -548,6 +561,7 @@ GameObject:
   - component: {fileID: 303764842}
   - component: {fileID: 303764841}
   - component: {fileID: 303764840}
+  - component: {fileID: 303764844}
   m_Layer: 0
   m_Name: I
   m_TagString: Untagged
@@ -645,7 +659,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -676,6 +690,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &303764844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 303764838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &362547370
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,6 +715,7 @@ GameObject:
   - component: {fileID: 362547374}
   - component: {fileID: 362547373}
   - component: {fileID: 362547372}
+  - component: {fileID: 362547376}
   m_Layer: 0
   m_Name: C1
   m_TagString: Untagged
@@ -786,7 +813,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -817,6 +844,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &362547376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362547370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &466450004
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,6 +869,7 @@ GameObject:
   - component: {fileID: 466450008}
   - component: {fileID: 466450007}
   - component: {fileID: 466450006}
+  - component: {fileID: 466450010}
   m_Layer: 0
   m_Name: K
   m_TagString: Untagged
@@ -927,7 +967,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -958,6 +998,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &466450010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 466450004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &684464459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1477,6 +1529,7 @@ GameObject:
   - component: {fileID: 1099522038}
   - component: {fileID: 1099522037}
   - component: {fileID: 1099522036}
+  - component: {fileID: 1099522039}
   m_Layer: 0
   m_Name: Chicken
   m_TagString: Untagged
@@ -1515,7 +1568,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1605,6 +1658,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0.12, y: 0.35}
   m_Size: {x: 2.69, y: 2.1}
   m_Direction: 1
+--- !u!114 &1099522039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1099522033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1322687652
 GameObject:
   m_ObjectHideFlags: 0
@@ -1675,6 +1740,7 @@ GameObject:
   - component: {fileID: 1524828418}
   - component: {fileID: 1524828417}
   - component: {fileID: 1524828416}
+  - component: {fileID: 1524828420}
   m_Layer: 0
   m_Name: N
   m_TagString: Untagged
@@ -1772,7 +1838,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1803,6 +1869,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1524828420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524828414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1544564342
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,6 +2160,7 @@ GameObject:
   - component: {fileID: 1655997730}
   - component: {fileID: 1655997729}
   - component: {fileID: 1655997728}
+  - component: {fileID: 1655997732}
   m_Layer: 0
   m_Name: H
   m_TagString: Untagged
@@ -2179,7 +2258,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2210,6 +2289,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1655997732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655997726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1739258773
 GameObject:
   m_ObjectHideFlags: 0
@@ -2223,6 +2314,7 @@ GameObject:
   - component: {fileID: 1739258778}
   - component: {fileID: 1739258777}
   - component: {fileID: 1739258776}
+  - component: {fileID: 1739258779}
   m_Layer: 0
   m_Name: C2
   m_TagString: Untagged
@@ -2261,7 +2353,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2351,6 +2443,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.00000047683716}
   m_Size: {x: 0.65, y: 1}
   m_Direction: 0
+--- !u!114 &1739258779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739258773}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2047527631
 GameObject:
   m_ObjectHideFlags: 0
@@ -2443,6 +2547,7 @@ GameObject:
   - component: {fileID: 2060725257}
   - component: {fileID: 2060725256}
   - component: {fileID: 2060725258}
+  - component: {fileID: 2060725259}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Untagged
@@ -2484,7 +2589,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2584,6 +2689,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.45, y: 1.56}
   m_EdgeRadius: 0
+--- !u!114 &2060725259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060725253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2071551176
 GameObject:
   m_ObjectHideFlags: 0

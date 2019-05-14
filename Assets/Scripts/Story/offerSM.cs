@@ -14,6 +14,7 @@ public class offerSM : LevelSM
     private bool trigger;
     public GameObject offer;
     public GameObject offerImage;
+    public Material DefaultMaterial;
     public AudioClip BGM2;
     private LevelManager lm;
 
@@ -80,6 +81,7 @@ public class offerSM : LevelSM
         while(alpha >= 0)
         {
             alpha -= 0.03f;
+            obj.GetComponent<SpriteRenderer>().material = DefaultMaterial;
             obj.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, alpha);
             yield return new WaitForFixedUpdate();
         }
@@ -90,6 +92,7 @@ public class offerSM : LevelSM
         while(alpha <= 1)
         {
             alpha += 0.03f;
+            obj.GetComponent<SpriteRenderer>().material = DefaultMaterial;
             obj.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, alpha);
             yield return new WaitForFixedUpdate();
         }

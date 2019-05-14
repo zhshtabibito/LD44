@@ -209,12 +209,13 @@ GameObject:
   m_Component:
   - component: {fileID: 237418409}
   - component: {fileID: 237418408}
+  - component: {fileID: 237418412}
   - component: {fileID: 237418407}
   - component: {fileID: 237418410}
   - component: {fileID: 237418411}
   m_Layer: 0
   m_Name: Father
-  m_TagString: Untagged
+  m_TagString: outline
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -258,7 +259,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -318,8 +319,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.7156964, y: 1.4373419}
-  m_Size: {x: 3.684201, y: 5.377837}
+  m_Offset: {x: -0.24328996, y: 2.2571206}
+  m_Size: {x: 5.6021743, y: 7.0173945}
   m_Direction: 0
 --- !u!82 &237418411
 AudioSource:
@@ -417,6 +418,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &237418412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237418406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &904812644
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,6 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1427522245}
   - component: {fileID: 1427522247}
+  - component: {fileID: 1427522251}
   - component: {fileID: 1427522246}
   - component: {fileID: 1427522248}
   - component: {fileID: 1427522249}
@@ -719,7 +733,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -878,6 +892,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1427522251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427522244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1569110807 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5840761403884156391, guid: 7e17def66547a487dbe5268b1cc38ffa,
@@ -1075,15 +1101,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5519240516321345384, guid: 7e17def66547a487dbe5268b1cc38ffa,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 304063017343986073, guid: 7e17def66547a487dbe5268b1cc38ffa,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519240516321345384, guid: 7e17def66547a487dbe5268b1cc38ffa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2738815742729119632, guid: 7e17def66547a487dbe5268b1cc38ffa,
         type: 3}

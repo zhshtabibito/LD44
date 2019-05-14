@@ -212,6 +212,7 @@ GameObject:
   - component: {fileID: 237418407}
   - component: {fileID: 237418410}
   - component: {fileID: 237418411}
+  - component: {fileID: 237418412}
   m_Layer: 0
   m_Name: Father
   m_TagString: Untagged
@@ -258,7 +259,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -417,6 +418,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &237418412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237418406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &333339506 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6931690742049727515, guid: a571fe05612c04c3388677e1603bd4c5,
@@ -873,6 +886,7 @@ GameObject:
   - component: {fileID: 1427522248}
   - component: {fileID: 1427522249}
   - component: {fileID: 1427522250}
+  - component: {fileID: 1427522251}
   m_Layer: 0
   m_Name: Snooze
   m_TagString: Untagged
@@ -930,7 +944,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7cb17557d37db4ab7a37f4b0a2664dd8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1092,6 +1106,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1427522251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427522244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0fea0d99e8874654aef56b677a32d92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1538040557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6931690742651025922, guid: a571fe05612c04c3388677e1603bd4c5,
@@ -1311,15 +1337,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5519240516321345384, guid: 7e17def66547a487dbe5268b1cc38ffa,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 304063017343986073, guid: 7e17def66547a487dbe5268b1cc38ffa,
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5519240516321345384, guid: 7e17def66547a487dbe5268b1cc38ffa,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2738815742729119632, guid: 7e17def66547a487dbe5268b1cc38ffa,
         type: 3}
